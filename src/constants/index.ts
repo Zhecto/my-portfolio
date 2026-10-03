@@ -109,7 +109,7 @@ export const EXPERIENCES = [
       'Built real-time analytics dashboard serving 50K+ users',
       'Implemented CI/CD pipeline reducing bugs by 60%',
     ],
-    skills: ['View.js', 'Python', 'PostgreSQL'],
+    skills: ['Vue.js', 'Python', 'PostgreSQL'],
   },
 ];
 
