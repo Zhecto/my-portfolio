@@ -30,6 +30,12 @@ import {
  */
 import type { Project } from '../types';
 
+export const NAV_LINKS = [
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
+];
+
 export const PROFILE_TAGS = [
   'React 19',
   'TypeScript',
