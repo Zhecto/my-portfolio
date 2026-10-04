@@ -1,4 +1,6 @@
 import { TOOL_CATEGORIES } from '../constants';
+import { Reveal } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 import { TagList } from './TagList';
 
 const ACCENTS = [
@@ -15,34 +17,38 @@ export const Technologies = () => {
       id='technologies'
       className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
     >
-      <h2 className='text-on-surface text-3xl font-bold'>
-        Technologies & Tools
-      </h2>
-      <p className='text-on-surface-variant mt-2'>
-        What I build with, and what I build alongside.
-      </p>
+      <Reveal>
+        <SectionHeading
+          title='Technologies & Tools'
+          subtitle='What I build with, and what I build alongside.'
+        />
+      </Reveal>
 
       <div className='mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
         {TOOL_CATEGORIES.map(({ title, Icon, items }, index) => (
-          <article
+          <Reveal
             key={title}
-            className='bg-surface-container-low border-outline-variant rounded-3xl border p-6'
+            delay={index * 60}
           >
-            <div className='flex items-center gap-3'>
-              <div
-                aria-hidden='true'
-                className={`flex size-10 items-center justify-center rounded-xl ${ACCENTS[index % ACCENTS.length]}`}
-              >
-                <Icon size={20} />
+            <article className='bg-surface-container-low border-outline-variant hover:shadow-on-surface/10 h-full rounded-3xl border p-6 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-lg'>
+              <div className='flex items-center gap-3'>
+                <div
+                  aria-hidden='true'
+                  className={`flex size-10 items-center justify-center rounded-xl ${ACCENTS[index % ACCENTS.length]}`}
+                >
+                  <Icon size={20} />
+                </div>
+                <h3 className='text-on-surface text-lg font-semibold'>
+                  {title}
+                </h3>
               </div>
-              <h3 className='text-on-surface text-lg font-semibold'>{title}</h3>
-            </div>
 
-            <TagList
-              tags={items}
-              className='mt-5'
-            />
-          </article>
+              <TagList
+                tags={items}
+                className='mt-5'
+              />
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>

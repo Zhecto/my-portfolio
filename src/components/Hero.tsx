@@ -5,7 +5,7 @@ export const Hero = () => {
     <section className='mx-auto max-w-5xl px-6 py-24 sm:py-32'>
       <p className='text-primary mb-4 font-medium'>Hi, I'm</p>
 
-      <h1 className='text-on-surface text-4xl font-bold sm:text-6xl'>
+      <h1 className='text-on-surface text-5xl font-bold tracking-tight leading-[1.05] sm:text-7xl'>
         {PROFILE.name}
       </h1>
 
@@ -13,7 +13,7 @@ export const Hero = () => {
         {PROFILE.title}
       </h2>
 
-      <p className='text-on-surface-variant mt-6 max-w-2xl text-lg'>
+      <p className='text-on-surface-variant mt-6 max-w-2xl text-lg leading-relaxed'>
         {PROFILE.intro}
       </p>
 
