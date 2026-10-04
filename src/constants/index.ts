@@ -153,8 +153,7 @@ export const EDUCATIONS: EducationItem[] = [
     academy: 'Saint Louis University',
     year: '2026',
     certificate: 'Cumlaude',
-    Icon: GraduationCapIcon,
-    skills: ['Algorithm', 'Distributed Systems', 'ML', 'AI', 'Web Development', 'Database Management', 'Data Structures', 'Software Engineering', 'Mobile Development', 'Cybersecurity', 'Data Science'],
+    Icon: GraduationCapIcon,  
   },
   {
     title: 'AWS Certified Architect',
@@ -162,7 +161,11 @@ export const EDUCATIONS: EducationItem[] = [
     year: '2022',
     certificate: 'Amazon Web Services',
     Icon: AwardIcon,
-    skills: ['Cloud Architecture', 'Security', 'Cost Optimization'],
+    certificateFile: {
+      src: placeholder(1600, 1130, 'AWS certificate', '#FFE8D6'),
+      type: 'image',
+    },
+    credentialUrl: 'https://example.com/verify',
   },
   {
     title: 'Google Cloud Professional',
@@ -170,7 +173,10 @@ export const EDUCATIONS: EducationItem[] = [
     year: '2023',
     certificate: 'Google Cloud',
     Icon: AwardIcon,
-    skills: ['Infrastructure', 'DevOps', 'Networking'],
+    certificateFile: {
+      src: '/certificates/sample.pdf',
+      type: 'pdf',
+    },
   },
 ];
 
