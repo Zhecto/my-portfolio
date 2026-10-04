@@ -30,7 +30,7 @@ export const Contact = () => {
       className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
     >
       <div className='bg-primary-container text-on-primary-container rounded-3xl px-6 py-14 text-center sm:px-12'>
-        <h2 className='text-3xl font-bold'>Let's work together</h2>
+        <h2 className='text-3xl font-bold tracking-tight'>Let's work together</h2>
         <p className='mx-auto mt-3 max-w-xl text-lg'>
           Have a project in mind, a question, or just want to say hi? My inbox
           is open.

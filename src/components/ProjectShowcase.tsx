@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { PROJECTS } from '../constants';
 import { cn } from '../lib/utils';
 import { MediaGallery } from './MediaGallery';
+import { Reveal } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 import { TagList } from './TagList';
 
 export const ProjectShowcase = () => {
@@ -34,12 +36,14 @@ export const ProjectShowcase = () => {
       id='projects'
       className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
     >
-      <h2 className='text-on-surface text-3xl font-bold'>Projects</h2>
-      <p className='text-on-surface-variant mt-2'>
-        A few things I've built and learned from.
-      </p>
+      <Reveal>
+        <SectionHeading
+          title='Projects'
+          subtitle="A few things I've built and learned from."
+        />
+      </Reveal>
 
-      <div className='bg-surface-container-low border-outline-variant mt-10 overflow-hidden rounded-3xl border'>
+      <div className='bg-surface-container-low border-outline-variant hover:shadow-on-surface/10 mt-10 overflow-hidden rounded-3xl border transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-lg'>
         <div className={cn('grid', hasPortrait && 'lg:grid-cols-[2fr_1fr]')}>
           <div
             className={cn(
@@ -68,12 +72,12 @@ export const ProjectShowcase = () => {
 
         <div className='p-6'>
           <div aria-live='polite'>
-            <h3 className='text-on-surface text-xl font-semibold'>
+            <h3 className='text-on-surface text-xl font-semibold tracking-tight'>
               {project.title}
             </h3>
           </div>
 
-          <p className='text-on-surface-variant mt-3 max-w-3xl'>
+          <p className='text-on-surface-variant mt-3 max-w-3xl leading-relaxed'>
             {project.desc}
           </p>
 
