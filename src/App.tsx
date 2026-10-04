@@ -19,7 +19,7 @@
  */
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Projects } from './components/Projects';
+import { ProjectShowcase } from './components/ProjectShowcase';
 
 /**
  * Assets
@@ -31,7 +31,7 @@ export const App = () => {
       <Navbar />
       <main>
         <Hero />
-        <Projects />
+        <ProjectShowcase />
       </main>
     </div>
   );

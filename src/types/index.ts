@@ -6,13 +6,16 @@
 /**
  * Types
  */
-import type { LucideIcon } from 'lucide-react';
+export interface Media {
+  src: string;
+  alt: string;
+}
 
 export interface Project {
-  Icon: LucideIcon;
-  bg: string;
   title: string;
   desc: string;
   techStacks: string[];
   projectUrl: string;
+  landscape: Media[];
+  portrait: Media[];
 }
