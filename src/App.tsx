@@ -22,6 +22,8 @@ import { Hero } from './components/Hero';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
 /**
  * Assets
@@ -36,7 +38,9 @@ export const App = () => {
         <ProjectShowcase />
         <Experience />
         <Education />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 };
