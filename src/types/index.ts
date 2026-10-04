@@ -31,11 +31,17 @@ export interface ExperienceItem {
   skills: string[];
 }
 
+export interface CertificateFile {
+  src: string;
+  type: 'image' | 'pdf';
+}
+
 export interface EducationItem {
   title: string;
   academy: string;
   year: string;
   certificate: string;
   Icon: LucideIcon;
-  skills: string[];
+  certificateFile?: CertificateFile;
+  credentialUrl?: string;
 }
