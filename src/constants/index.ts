@@ -29,8 +29,8 @@ import type {
 } from '../types';
 
 export const NAV_LINKS = [
-  { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -41,20 +41,6 @@ export const PROFILE = {
   intro:
     'I build web and mobile apps with TypeScript, React Native and Supabase. Currently a software developer intern at Metawatt, working on features, bug fixes and manual testing.',
 };
-
-export const PROFILE_TAGS = [
-  'TypeScript',
-  'JavaScript',
-  'React',
-  'React Native',
-  'Node.js',
-  'Supabase',
-  'MySQL',
-  'PHP',
-  'Java',
-  'Python',
-  'Manual Testing',
-];
 
 export const PROJECTS: Project[] = [
   {

@@ -1,4 +1,4 @@
-import { PROFILE, PROFILE_TAGS } from '../constants';
+import { PROFILE } from '../constants';
 
 export const Hero = () => {
   return (
@@ -16,17 +16,6 @@ export const Hero = () => {
       <p className='text-on-surface-variant mt-6 max-w-2xl text-lg'>
         {PROFILE.intro}
       </p>
-
-      <ul className='mt-8 flex flex-wrap gap-2'>
-        {PROFILE_TAGS.map((tag) => (
-          <li
-            key={tag}
-            className='bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 text-sm'
-          >
-            {tag}
-          </li>
-        ))}
-      </ul>
 
       <div className='mt-10 flex flex-wrap gap-4'>
         <a
