@@ -6,17 +6,16 @@
 /**
  * Assets
  */
-import { AwardIcon, GraduationCapIcon } from 'lucide-react';
 import {
-  JavaScript,
-  MySQL,
-  NodeJs,
-  PHP,
-  Python,
-  React,
-  Supabase,
-  TypeScript,
-} from '../assets/TechStackIcons';
+  AwardIcon,
+  CodeXmlIcon,
+  DatabaseIcon,
+  GraduationCapIcon,
+  LayersIcon,
+  PenToolIcon,
+  SparklesIcon,
+  WrenchIcon,
+} from 'lucide-react';
 import kaizenForms from '../assets/projects/KaizenForms.jpg';
 
 /**
@@ -26,7 +25,7 @@ import type {
   EducationItem,
   ExperienceItem,
   Project,
-  TechStackItem,
+  ToolCategory,
 } from '../types';
 
 export const NAV_LINKS = [
@@ -40,7 +39,7 @@ export const PROFILE = {
   title: 'Full-Stack Developer',
   email: 'keanufortalezax44@gmail.com',
   intro:
-    'Computer Science graduate (Cum Laude) building full-stack web and mobile apps with TypeScript, React Native and Supabase. Currently a software developer intern at Metawatt, working on features, bug fixes and manual testing.',
+    'I build web and mobile apps with TypeScript, React Native and Supabase. Currently a software developer intern at Metawatt, working on features, bug fixes and manual testing.',
 };
 
 export const PROFILE_TAGS = [
@@ -116,7 +115,7 @@ export const EDUCATIONS: EducationItem[] = [
     title: 'B.S. in Computer Science',
     academy: 'Saint Louis University, Baguio City',
     year: '2022 – 2026',
-    certificate: "Cum Laude · Dean's Lister 2022-2026",
+    certificate: "Cum Laude · Dean's Lister",
     Icon: GraduationCapIcon,
   },
   {
@@ -143,38 +142,45 @@ export const EDUCATIONS: EducationItem[] = [
   },
 ];
 
-export const TECH_STACKS: TechStackItem[] = [
+export const TOOL_CATEGORIES: ToolCategory[] = [
   {
-    name: 'React / React Native',
-    Icon: React,
+    title: 'Languages',
+    Icon: CodeXmlIcon,
+    items: [
+      'TypeScript',
+      'JavaScript',
+      'Java',
+      'Python',
+      'SQL',
+      'PHP',
+      'HTML',
+      'CSS',
+    ],
   },
   {
-    name: 'TypeScript',
-    Icon: TypeScript,
+    title: 'Frameworks & Libraries',
+    Icon: LayersIcon,
+    items: ['React Native', 'React', 'Node.js', 'Express.js', 'Tailwind CSS'],
   },
   {
-    name: 'JavaScript',
-    Icon: JavaScript,
+    title: 'Databases',
+    Icon: DatabaseIcon,
+    items: ['MySQL', 'Supabase'],
   },
   {
-    name: 'Node.js',
-    Icon: NodeJs,
+    title: 'Dev Tools',
+    Icon: WrenchIcon,
+    items: ['Git', 'Docker', 'Orca', 'VS Code'],
   },
   {
-    name: 'Supabase',
-    Icon: Supabase,
+    title: 'AI Tools',
+    Icon: SparklesIcon,
+    items: ['Claude Code', 'OpenCode'],
   },
   {
-    name: 'MySQL',
-    Icon: MySQL,
-  },
-  {
-    name: 'PHP',
-    Icon: PHP,
-  },
-  {
-    name: 'Python',
-    Icon: Python,
+    title: 'UI/UX',
+    Icon: PenToolIcon,
+    items: ['Figma', 'Canva'],
   },
 ];
 
