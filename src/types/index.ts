@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react';
+
 /**
  * @copyright 2026 codewithsadee
  * @license Apache-2.0
@@ -18,4 +20,22 @@ export interface Project {
   projectUrl: string;
   landscape: Media[];
   portrait: Media[];
+}
+
+export interface ExperienceItem {
+  company: string;
+  position: string;
+  joinDate: string;
+  resignDate?: string;
+  achievements: string[];
+  skills: string[];
+}
+
+export interface EducationItem {
+  title: string;
+  academy: string;
+  year: string;
+  certificate: string;
+  Icon: LucideIcon;
+  skills: string[];
 }

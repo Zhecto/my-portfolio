@@ -23,7 +23,7 @@ import { placeholder } from '../lib/placeholder';
 /**
  * Types
  */
-import type { Project } from '../types';
+import type { EducationItem, ExperienceItem, Project } from '../types';
 
 export const NAV_LINKS = [
   { href: '#projects', label: 'Projects' },
@@ -123,7 +123,7 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const EXPERIENCES = [
+export const EXPERIENCES: ExperienceItem[] = [
   {
     company: 'CloudScale System',
     position: 'Senior Backend Engineer',
@@ -147,14 +147,14 @@ export const EXPERIENCES = [
   },
 ];
 
-export const EDUCATIONS = [
+export const EDUCATIONS: EducationItem[] = [
   {
     title: 'B.S. Computer Science',
-    academy: 'Tech Institute of Excellence',
-    year: '2019',
-    certificate: 'Graduated with Honors',
+    academy: 'Saint Louis University',
+    year: '2026',
+    certificate: 'Cumlaude',
     Icon: GraduationCapIcon,
-    skills: ['Algorithm', 'Distributed Systems', 'ML'],
+    skills: ['Algorithm', 'Distributed Systems', 'ML', 'AI', 'Web Development', 'Database Management', 'Data Structures', 'Software Engineering', 'Mobile Development', 'Cybersecurity', 'Data Science'],
   },
   {
     title: 'AWS Certified Architect',

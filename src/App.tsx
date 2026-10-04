@@ -20,6 +20,8 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectShowcase } from './components/ProjectShowcase';
+import { Education } from './components/Education';
+import { Experience } from './components/Experience';
 
 /**
  * Assets
@@ -32,6 +34,8 @@ export const App = () => {
       <main>
         <Hero />
         <ProjectShowcase />
+        <Experience />
+        <Education />
       </main>
     </div>
   );
