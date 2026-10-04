@@ -13,7 +13,7 @@ export const TechStack = () => {
         The tools I use to build and ship.
       </p>
 
-      <ul className='mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6'>
+      <ul className='mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4'>
         {TECH_STACKS.map(({ name, Icon }) => (
           <li
             key={name}
