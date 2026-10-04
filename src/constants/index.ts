@@ -23,7 +23,12 @@ import { placeholder } from '../lib/placeholder';
 /**
  * Types
  */
-import type { EducationItem, ExperienceItem, Project } from '../types';
+import type {
+  EducationItem,
+  ExperienceItem,
+  Project,
+  TechStackItem,
+} from '../types';
 
 export const NAV_LINKS = [
   { href: '#projects', label: 'Projects' },
@@ -181,7 +186,7 @@ export const EDUCATIONS: EducationItem[] = [
   },
 ];
 
-export const TECH_STACKS = [
+export const TECH_STACKS: TechStackItem[] = [
   {
     name: 'React',
     Icon: React,

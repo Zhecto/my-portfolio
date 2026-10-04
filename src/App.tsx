@@ -22,6 +22,7 @@ import { Hero } from './components/Hero';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
+import { TechStack } from './components/TechStack';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -36,6 +37,7 @@ export const App = () => {
       <main>
         <Hero />
         <ProjectShowcase />
+        <TechStack />
         <Experience />
         <Education />
         <Contact />

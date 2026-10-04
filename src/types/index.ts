@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import type { ComponentProps, ComponentType } from 'react';
 
 /**
  * @copyright 2026 codewithsadee
@@ -44,4 +45,9 @@ export interface EducationItem {
   Icon: LucideIcon;
   certificateFile?: CertificateFile;
   credentialUrl?: string;
+}
+
+export interface TechStackItem {
+  name: string;
+  Icon: ComponentType<ComponentProps<'svg'>>;
 }
