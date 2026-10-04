@@ -7,12 +7,6 @@
  * Assets
  */
 import {
-  CpuIcon,
-  GlobeIcon,
-  LayersIcon,
-  MailIcon,
-  SparklesIcon,
-  TerminalIcon,
   GraduationCapIcon,
   AwardIcon,
 } from 'lucide-react';
@@ -24,6 +18,7 @@ import {
   Docker,
   PostgreSQL,
 } from '../assets/TechStackIcons';
+import { placeholder } from '../lib/placeholder';
 
 /**
  * Types
@@ -57,52 +52,74 @@ export const PROFILE_TAGS = [
 
 export const PROJECTS: Project[] = [
   {
-    Icon: GlobeIcon,
-    bg: '#D0E4FF',
     title: 'EcoSphere AI',
-    desc: 'A comprehensive sustainability tracking platform that uses machine learning to analyze carbon footprints and provide actionable insights for businesses and individuals.',
+    desc: 'A sustainability tracking platform that analyzes carbon footprints and gives actionable insights for businesses and individuals.',
     techStacks: ['React', 'Node.js', 'AI'],
     projectUrl: '',
+    landscape: [
+      {
+        src: placeholder(1600, 900, 'EcoSphere desktop 1', '#D0E4FF'),
+        alt: 'EcoSphere dashboard on desktop',
+      },
+      {
+        src: placeholder(1600, 900, 'EcoSphere desktop 2', '#B8D4F5'),
+        alt: 'EcoSphere reports page on desktop',
+      },
+      {
+        src: placeholder(1600, 900, 'EcoSphere desktop 3', '#9CC2EE'),
+        alt: 'EcoSphere settings page on desktop',
+      },
+    ],
+    portrait: [
+      {
+        src: placeholder(900, 1200, 'EcoSphere mobile 1', '#D0E4FF'),
+        alt: 'EcoSphere dashboard on mobile',
+      },
+      {
+        src: placeholder(900, 1200, 'EcoSphere mobile 2', '#B8D4F5'),
+        alt: 'EcoSphere reports page on mobile',
+      },
+    ],
   },
   {
-    Icon: CpuIcon,
-    bg: '#FAD8FD',
     title: 'NeuroFlow',
-    desc: 'Real-time productivity dashboard that syncs with biometric devices to optimize work schedules based on focus levels and energy patterns.',
+    desc: 'Real-time productivity dashboard that syncs with biometric devices to optimize work schedules based on focus levels.',
     techStacks: ['Next.js', 'Socket.io'],
     projectUrl: '',
+    landscape: [
+      {
+        src: placeholder(1600, 900, 'NeuroFlow desktop 1', '#FAD8FD'),
+        alt: 'NeuroFlow focus dashboard on desktop',
+      },
+      {
+        src: placeholder(1600, 900, 'NeuroFlow desktop 2', '#F2BDF7'),
+        alt: 'NeuroFlow schedule view on desktop',
+      },
+    ],
+    portrait: [
+      {
+        src: placeholder(900, 1200, 'NeuroFlow mobile 1', '#FAD8FD'),
+        alt: 'NeuroFlow focus dashboard on mobile',
+      },
+    ],
   },
   {
-    Icon: TerminalIcon,
-    bg: '#E2F1E6',
     title: 'Veritas API',
-    desc: 'High-performance authentication gateway built for Web3 applications with zero-knowledge proof integration and distributed session management.',
+    desc: 'High-performance authentication gateway for Web3 apps with zero-knowledge proof integration.',
     techStacks: ['Go', 'Redis', 'Docker'],
     projectUrl: '',
-  },
-  {
-    Icon: LayersIcon,
-    bg: '#FFE8D6',
-    title: 'CloudSync Pro',
-    desc: 'Enterprise-grade cloud storage management system that seamlessly integrates AWS, Azure, and GCP for unified data management.',
-    techStacks: ['Vue.js', 'Python', 'Kubernetes'],
-    projectUrl: '',
-  },
-  {
-    Icon: SparklesIcon,
-    bg: '#E8F5E9',
-    title: 'DataViz Studio',
-    desc: 'Powerful data visualization toolkit with real-time rendering capabilities for large datasets using WebGL acceleration.',
-    techStacks: ['D3.js', 'React', 'WebGL'],
-    projectUrl: '',
-  },
-  {
-    Icon: MailIcon,
-    bg: '#FFF3E0',
-    title: 'SecureChat',
-    desc: 'Privacy-focused messaging app with military-grade encryption, self-destructing messages, and decentralized architecture.',
-    techStacks: ['React Native', 'WebRTC', 'Rust'],
-    projectUrl: '',
+    landscape: [
+      {
+        src: placeholder(1600, 900, 'Veritas desktop 1', '#E2F1E6'),
+        alt: 'Veritas API documentation on desktop',
+      },
+    ],
+    portrait: [
+      {
+        src: placeholder(900, 1200, 'Veritas mobile 1', '#E2F1E6'),
+        alt: 'Veritas API documentation on mobile',
+      },
+    ],
   },
 ];
 
