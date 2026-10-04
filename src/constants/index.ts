@@ -34,6 +34,7 @@ export const NAV_LINKS = [
 export const PROFILE = {
   name: 'Keanu Sonn Fortaleza',
   title: 'Full Stack Developer',
+  email: 'keanufortalezax44@gmail.com',
   intro:
     'I build fast, accessible web apps and I am learning something new with every project.',
 };
