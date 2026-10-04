@@ -36,12 +36,23 @@ export const NAV_LINKS = [
   { href: '#contact', label: 'Contact' },
 ];
 
+export const PROFILE = {
+  name: 'Keanu Sonn Fortaleza',
+  title: 'Full Stack Developer',
+  intro:
+    'I build fast, accessible web apps and I am learning something new with every project.',
+};
+
 export const PROFILE_TAGS = [
-  'React 19',
+  'React',
   'TypeScript',
   'Node.js',
-  'AWS',
-  'GraphQL',
+  'Tailwind CSS',
+  'Java',
+  'Python',
+  'Docker',
+  'PostgreSQL',
+  'Supabase',
 ];
 
 export const PROJECTS: Project[] = [

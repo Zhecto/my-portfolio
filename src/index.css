@@ -158,3 +158,7 @@
   --color-scrim: var(--scrim);
   --color-shadow: var(--shadow);
 }
+
+html {
+  scroll-behavior: smooth;
+}
