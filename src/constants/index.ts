@@ -6,19 +6,17 @@
 /**
  * Assets
  */
+import { AwardIcon, GraduationCapIcon } from 'lucide-react';
 import {
-  GraduationCapIcon,
-  AwardIcon,
-} from 'lucide-react';
-import {
-  React,
-  NextJs,
-  TypeScript,
+  JavaScript,
+  MySQL,
   NodeJs,
-  Docker,
-  PostgreSQL,
+  PHP,
+  Python,
+  React,
+  Supabase,
+  TypeScript,
 } from '../assets/TechStackIcons';
-import { placeholder } from '../lib/placeholder';
 import kaizenForms from '../assets/projects/KaizenForms.jpg';
 
 /**
@@ -39,29 +37,31 @@ export const NAV_LINKS = [
 
 export const PROFILE = {
   name: 'Keanu Sonn Fortaleza',
-  title: 'Full Stack Developer',
+  title: 'Full-Stack Developer',
   email: 'keanufortalezax44@gmail.com',
   intro:
-    'I build fast, accessible web apps and I am learning something new with every project.',
+    'Computer Science graduate (Cum Laude) building full-stack web and mobile apps with TypeScript, React Native and Supabase. Currently a software developer intern at Metawatt, working on features, bug fixes and manual testing.',
 };
 
 export const PROFILE_TAGS = [
-  'React',
   'TypeScript',
+  'JavaScript',
+  'React',
+  'React Native',
   'Node.js',
-  'Tailwind CSS',
+  'Supabase',
+  'MySQL',
+  'PHP',
   'Java',
   'Python',
-  'Docker',
-  'PostgreSQL',
-  'Supabase',
+  'Manual Testing',
 ];
 
 export const PROJECTS: Project[] = [
   {
     title: 'KaizenForms',
-    desc: 'A web application created to manage and streamline the exit interview process. This system enables administrators to add, edit, and delete questions, evaluate responses, and manage evaluations efficiently. It showcases the integration of client-side and server-side web technologies.',
-    techStacks: ['PHP', 'AJAX', 'Express.js', 'Node.js', 'JavaScript'],
+    desc: 'A responsive full-stack web application that streamlines the exit interview process. Administrators can add, edit, and delete questions and evaluate responses. I worked on the database interactions and backend modules for question management and response evaluation, added sorting, refined error handling, and connected the backend logic to the UI. Built as an academic project.',
+    techStacks: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'PHP', 'MySQL'],
     projectUrl: '',
     landscape: [
       {
@@ -74,56 +74,70 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    company: 'CloudScale System',
-    position: 'Senior Backend Engineer',
-    joinDate: '2021',
+    company: 'Metawatt',
+    position: 'Software Developer Intern',
+    joinDate: 'August 2026',
     achievements: [
-      'Led migration to microservices architecture, improving system scalability by 300%',
-      'Mentored team of 8 junior developers',
+      'Support two concurrent product teams with feature development, bug fixing, and manual testing across UI behavior, business logic, and error handling.',
+      'Resolve assigned bugs end to end: reproduce the issue, trace the root cause, apply the fix, and re-verify against expected behavior.',
+      'Run manual and exploratory test cases and document reproducible issues with expected vs. actual results. Found a boundary-validation defect that let an unbounded year value be entered and saved in a date field.',
+      'Use AI-assisted development tools to speed up debugging and code comprehension, validating all output against functional requirements.',
     ],
-    skills: ['React', 'Node.js', 'AWS'],
+    skills: ['Manual Testing', 'Debugging', 'Defect Reporting'],
   },
   {
-    company: 'Nexus Labs',
-    position: 'Full Stack Developer',
-    joinDate: '2019',
-    resignDate: '2021',
+    company: 'ESCA',
+    position: 'Full-Stack Developer (Freelance / On-Call)',
+    joinDate: 'March 2026',
     achievements: [
-      'Built real-time analytics dashboard serving 50K+ users',
-      'Implemented CI/CD pipeline reducing bugs by 60%',
+      'Deliver scoped features and bug fixes, on call, for a cross-platform mobile app that lets farmers track crop inflow and outflow across a supply chain of farmers, middlemen, and buyers.',
+      'Integrated the React Native frontend with Supabase backend services and databases for real-time data flow between client and server.',
+      'Diagnosed and fixed concurrency defects in core authentication. Built state-based front-end execution locks and a custom Promise.race architecture in TypeScript that eliminated lock-ups on unpredictable networks.',
+      'Identified overlapping screen layouts between user roles and proposed a modular, reusable screen framework that reduced architectural redundancy and code duplication.',
     ],
-    skills: ['Vue.js', 'Python', 'PostgreSQL'],
+    skills: ['TypeScript', 'React Native', 'Supabase'],
+  },
+  {
+    company: 'NOAH Business Applications (Remote)',
+    position: 'Developer Intern',
+    joinDate: 'June 2025',
+    resignDate: 'July 2025',
+    achievements: [
+      'Ran rule-based UI test cases against company-defined business rules, recording Pass/Fail results and the expected behavior for each failed case.',
+      'Mapped business rules to website functionality and checked accuracy against functional requirements, strengthening requirements traceability across the test suite.',
+      'Built foundational skills in functional verification, test documentation, and structured defect reporting.',
+    ],
+    skills: ['UI Testing', 'Test Documentation', 'Requirements Traceability'],
   },
 ];
 
 export const EDUCATIONS: EducationItem[] = [
   {
-    title: 'B.S. Computer Science',
+    title: 'B.S. in Computer Science',
+    academy: 'Saint Louis University, Baguio City',
+    year: '2022 – 2026',
+    certificate: "Cum Laude · Dean's Lister 2022-2026",
+    Icon: GraduationCapIcon,
+  },
+  {
+    title: 'Microsoft Power BI Course',
     academy: 'Saint Louis University',
     year: '2026',
-    certificate: 'Cumlaude',
-    Icon: GraduationCapIcon,  
-  },
-  {
-    title: 'AWS Certified Architect',
-    academy: 'Amazon Web Services',
-    year: '2022',
-    certificate: 'Amazon Web Services',
+    certificate: 'Certificate of Completion · 29 May 2026',
     Icon: AwardIcon,
     certificateFile: {
-      src: placeholder(1600, 1130, 'AWS certificate', '#FFE8D6'),
+      src: '/certificates/power-bi-saint-louis-university.webp',
       type: 'image',
     },
-    credentialUrl: 'https://example.com/verify',
   },
   {
-    title: 'Google Cloud Professional',
-    academy: 'Google Cloud',
-    year: '2023',
-    certificate: 'Google Cloud',
+    title: 'Introduction to Cybersecurity',
+    academy: 'Cisco Networking Academy',
+    year: '2026',
+    certificate: 'DICT-ITU DTC Initiative · 09 Feb 2026',
     Icon: AwardIcon,
     certificateFile: {
-      src: '/certificates/sample.pdf',
+      src: '/certificates/introduction-to-cybersecurity-cisco.pdf',
       type: 'pdf',
     },
   },
@@ -131,42 +145,46 @@ export const EDUCATIONS: EducationItem[] = [
 
 export const TECH_STACKS: TechStackItem[] = [
   {
-    name: 'React',
+    name: 'React / React Native',
     Icon: React,
-  },
-  {
-    name: 'Next.js',
-    Icon: NextJs,
   },
   {
     name: 'TypeScript',
     Icon: TypeScript,
   },
   {
-    name: 'NodeJs',
+    name: 'JavaScript',
+    Icon: JavaScript,
+  },
+  {
+    name: 'Node.js',
     Icon: NodeJs,
   },
   {
-    name: 'Docker',
-    Icon: Docker,
+    name: 'Supabase',
+    Icon: Supabase,
   },
   {
-    name: 'PostgreSQL',
-    Icon: PostgreSQL,
+    name: 'MySQL',
+    Icon: MySQL,
+  },
+  {
+    name: 'PHP',
+    Icon: PHP,
+  },
+  {
+    name: 'Python',
+    Icon: Python,
   },
 ];
 
 export const FOOTER_LINKS = [
   {
-    url: '#',
+    url: '/resume.pdf',
     label: 'Resume',
   },
   {
-    url: '#',
-    label: 'LinkedIn',
-  },
-  {
-    url: '#',
-    label: 'Github',
+    url: 'https://github.com/Zhecto',
+    label: 'GitHub',
   },
 ];
