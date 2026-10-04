@@ -19,6 +19,7 @@ import {
   PostgreSQL,
 } from '../assets/TechStackIcons';
 import { placeholder } from '../lib/placeholder';
+import kaizenForms from '../assets/projects/KaizenForms.jpg';
 
 /**
  * Types
@@ -58,72 +59,14 @@ export const PROFILE_TAGS = [
 
 export const PROJECTS: Project[] = [
   {
-    title: 'EcoSphere AI',
-    desc: 'A sustainability tracking platform that analyzes carbon footprints and gives actionable insights for businesses and individuals.',
-    techStacks: ['React', 'Node.js', 'AI'],
+    title: 'KaizenForms',
+    desc: 'A web application created to manage and streamline the exit interview process. This system enables administrators to add, edit, and delete questions, evaluate responses, and manage evaluations efficiently. It showcases the integration of client-side and server-side web technologies.',
+    techStacks: ['PHP', 'AJAX', 'Express.js', 'Node.js', 'JavaScript'],
     projectUrl: '',
     landscape: [
       {
-        src: placeholder(1600, 900, 'EcoSphere desktop 1', '#D0E4FF'),
-        alt: 'EcoSphere dashboard on desktop',
-      },
-      {
-        src: placeholder(1600, 900, 'EcoSphere desktop 2', '#B8D4F5'),
-        alt: 'EcoSphere reports page on desktop',
-      },
-      {
-        src: placeholder(1600, 900, 'EcoSphere desktop 3', '#9CC2EE'),
-        alt: 'EcoSphere settings page on desktop',
-      },
-    ],
-    portrait: [
-      {
-        src: placeholder(900, 1200, 'EcoSphere mobile 1', '#D0E4FF'),
-        alt: 'EcoSphere dashboard on mobile',
-      },
-      {
-        src: placeholder(900, 1200, 'EcoSphere mobile 2', '#B8D4F5'),
-        alt: 'EcoSphere reports page on mobile',
-      },
-    ],
-  },
-  {
-    title: 'NeuroFlow',
-    desc: 'Real-time productivity dashboard that syncs with biometric devices to optimize work schedules based on focus levels.',
-    techStacks: ['Next.js', 'Socket.io'],
-    projectUrl: '',
-    landscape: [
-      {
-        src: placeholder(1600, 900, 'NeuroFlow desktop 1', '#FAD8FD'),
-        alt: 'NeuroFlow focus dashboard on desktop',
-      },
-      {
-        src: placeholder(1600, 900, 'NeuroFlow desktop 2', '#F2BDF7'),
-        alt: 'NeuroFlow schedule view on desktop',
-      },
-    ],
-    portrait: [
-      {
-        src: placeholder(900, 1200, 'NeuroFlow mobile 1', '#FAD8FD'),
-        alt: 'NeuroFlow focus dashboard on mobile',
-      },
-    ],
-  },
-  {
-    title: 'Veritas API',
-    desc: 'High-performance authentication gateway for Web3 apps with zero-knowledge proof integration.',
-    techStacks: ['Go', 'Redis', 'Docker'],
-    projectUrl: '',
-    landscape: [
-      {
-        src: placeholder(1600, 900, 'Veritas desktop 1', '#E2F1E6'),
-        alt: 'Veritas API documentation on desktop',
-      },
-    ],
-    portrait: [
-      {
-        src: placeholder(900, 1200, 'Veritas mobile 1', '#E2F1E6'),
-        alt: 'Veritas API documentation on mobile',
+        src: kaizenForms,
+        alt: 'KaizenForms on desktop',
       },
     ],
   },

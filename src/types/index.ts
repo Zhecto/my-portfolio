@@ -20,7 +20,7 @@ export interface Project {
   techStacks: string[];
   projectUrl: string;
   landscape: Media[];
-  portrait: Media[];
+  portrait?: Media[];
 }
 
 export interface ExperienceItem {
