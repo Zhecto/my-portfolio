@@ -39,7 +39,7 @@ export const Contact = () => {
         <div className='mt-8 flex flex-wrap items-center justify-center gap-4'>
           <a
             href={`mailto:${PROFILE.email}`}
-            className='bg-primary text-on-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition-opacity hover:opacity-90'
+            className='bg-primary text-on-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition-[opacity,transform] hover:opacity-90 active:scale-[0.97]'
           >
             <MailIcon size={18} />
             {PROFILE.email}

@@ -1,11 +1,12 @@
 import { MenuIcon, XIcon } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { NAV_LINKS } from '../constants';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const progressBar = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -17,6 +18,39 @@ export const Navbar = () => {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [open]);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const bar = progressBar.current;
+      if (!bar) return;
+
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+      bar.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+    };
+
+    // write to the ref directly so scrolling never re-renders the navbar
+    const onScroll = () => {
+      if (frame) return;
+
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
 
   return (
     <header className='bg-surface/80 border-outline-variant sticky top-0 z-10 border-b backdrop-blur'>
@@ -58,6 +92,12 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
+
+      <div
+        ref={progressBar}
+        aria-hidden='true'
+        className='bg-primary absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0'
+      />
 
       {open && (
         <nav
