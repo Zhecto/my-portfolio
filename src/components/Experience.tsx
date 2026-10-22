@@ -9,7 +9,7 @@ export const Experience = () => {
   return (
     <section
       id='experience'
-      className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
+      className='relative mx-auto max-w-6xl scroll-mt-20 px-6 py-24 sm:py-32'
     >
       <Reveal>
         <SectionHeading
@@ -20,21 +20,21 @@ export const Experience = () => {
 
       {/* revealed as one block so the <ol> keeps its <li> children intact */}
       <Reveal>
-        <ol className='border-outline-variant mt-10 ml-2 border-l'>
-          {EXPERIENCES.map((job) => (
+        <ol className='border-outline-variant relative mt-14 space-y-6 border-l pl-7 lg:border-0 lg:pl-0 lg:before:absolute lg:before:inset-y-0 lg:before:left-1/2 lg:before:w-px lg:before:bg-outline-variant'>
+          {EXPERIENCES.map((job, index) => (
             <li
               key={`${job.company}-${job.joinDate}`}
-              className='relative pb-12 pl-8 last:pb-0'
+              className={`bg-surface-container-low border-outline-variant relative rounded-2xl border p-6 shadow-lg shadow-black/5 sm:p-8 lg:w-[calc(50%-2rem)] ${index % 2 ? 'lg:ml-auto' : ''}`}
             >
               <span
                 aria-hidden='true'
-                className='bg-primary border-surface absolute top-1.5 -left-1.5 size-3 rounded-full border-2'
+                className={`bg-tertiary border-surface absolute top-8 -left-[2.2rem] size-4 rounded-full border-[3px] shadow-[0_0_15px_var(--tertiary)] ${index % 2 ? 'lg:-left-[2.65rem]' : 'lg:left-auto lg:-right-[2.65rem]'}`}
               />
 
-              <p className='text-primary text-sm font-medium'>
+              <p className='text-primary font-mono text-xs font-semibold tracking-wider uppercase'>
                 {job.joinDate} – {job.resignDate ?? 'Present'}
               </p>
-              <h3 className='text-on-surface mt-1 text-xl font-semibold'>
+              <h3 className='text-on-surface mt-3 text-2xl font-bold tracking-tight'>
                 {job.position}
               </h3>
               <p className='text-on-surface-variant'>{job.company}</p>

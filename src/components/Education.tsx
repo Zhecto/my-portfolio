@@ -20,7 +20,7 @@ export const Education = () => {
   return (
     <section
       id='education'
-      className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
+      className='relative mx-auto max-w-6xl scroll-mt-20 px-6 py-24 sm:py-32'
     >
       <Reveal>
         <SectionHeading
@@ -29,7 +29,7 @@ export const Education = () => {
         />
       </Reveal>
 
-      <div className='mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+      <div className='mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
         {EDUCATIONS.map(
           (
             {
@@ -47,7 +47,8 @@ export const Education = () => {
               key={title}
               delay={index * 60}
             >
-              <article className='bg-surface-container-low border-outline-variant hover:shadow-on-surface/10 flex h-full flex-col rounded-3xl border p-6 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-lg'>
+              <article className={`bg-surface-container-low border-outline-variant relative flex h-full flex-col overflow-hidden rounded-2xl border p-7 shadow-lg shadow-black/5 ${index === 1 ? 'lg:-translate-y-5' : ''}`}>
+                <div aria-hidden='true' className='bg-tertiary absolute top-0 left-0 h-1 w-24' />
                 <div className='bg-primary-container text-on-primary-container flex size-12 items-center justify-center rounded-2xl'>
                   <Icon size={24} />
                 </div>
@@ -58,7 +59,7 @@ export const Education = () => {
                 <p className='text-on-surface-variant mt-1'>
                   {academy} · {year}
                 </p>
-                <p className='text-primary mt-2 text-sm font-medium'>
+                <p className='text-primary mt-2 text-sm font-semibold'>
                   {certificate}
                 </p>
 

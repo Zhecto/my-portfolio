@@ -1,23 +1,9 @@
-// Blobs sit behind every section, so they must never intercept clicks.
-const BLOBS = [
-  { size: 'size-[34rem]', position: '-top-40 -left-32', tint: 'bg-primary/25', duration: 26 },
-  { size: 'size-[28rem]', position: 'top-1/3 -right-40', tint: 'bg-tertiary/20', duration: 34 },
-  { size: 'size-[24rem]', position: 'bottom-0 left-1/3', tint: 'bg-primary-container/40', duration: 18 },
-];
-
 export const Backdrop = () => {
   return (
-    <div
-      aria-hidden='true'
-      className='pointer-events-none fixed inset-0 -z-10 overflow-hidden'
-    >
-      {BLOBS.map(({ size, position, tint, duration }) => (
-        <div
-          key={position}
-          className={`drift absolute ${size} ${position} ${tint} rounded-full blur-3xl`}
-          style={{ animationDuration: `${duration}s` }}
-        />
-      ))}
+    <div aria-hidden='true' className='pointer-events-none fixed inset-0 -z-10 overflow-hidden'>
+      <div className='signal-grid absolute inset-0 opacity-40' />
+      <div className='bg-tertiary/10 absolute -top-52 right-[-12rem] size-[34rem] rounded-full blur-[110px]' />
+      <div className='bg-primary-container/50 absolute top-1/2 -left-64 size-[34rem] rounded-full blur-[130px]' />
     </div>
   );
 };

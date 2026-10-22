@@ -2,8 +2,8 @@ import { FOOTER_LINKS, PROFILE } from '../constants';
 
 export const Footer = () => {
   return (
-    <footer className='border-outline-variant border-t'>
-      <div className='mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row'>
+    <footer className='border-outline-variant bg-surface-container-low border-t'>
+      <div className='mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row'>
         <p className='text-on-surface-variant text-sm'>
           © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
         </p>

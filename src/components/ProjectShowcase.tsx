@@ -32,10 +32,7 @@ export const ProjectShowcase = () => {
   };
 
   return (
-    <section
-      id='projects'
-      className='mx-auto max-w-5xl scroll-mt-16 px-6 py-16'
-    >
+    <section id='projects' className='relative mx-auto max-w-6xl scroll-mt-20 px-6 py-24 sm:py-32'>
       <Reveal>
         <SectionHeading
           title='Projects'
@@ -43,93 +40,62 @@ export const ProjectShowcase = () => {
         />
       </Reveal>
 
-      <div className='bg-surface-container-low border-outline-variant hover:shadow-on-surface/10 mt-10 overflow-hidden rounded-3xl border transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-lg'>
-        <div className={cn('grid', hasPortrait && 'lg:grid-cols-[2fr_1fr]')}>
-          <div
-            className={cn(
-              'flex flex-col justify-center p-4',
-              hasPortrait &&
-                'border-outline-variant border-b lg:border-r lg:border-b-0',
-            )}
-          >
+      <div className='bg-surface-container-low border-outline-variant mt-14 grid overflow-hidden rounded-[2rem] border shadow-2xl shadow-black/10 lg:grid-cols-[1.2fr_0.8fr]'>
+        <div className='bg-surface-container relative flex min-w-0 flex-col justify-center overflow-hidden p-4 sm:p-7'>
+          <div aria-hidden='true' className='signal-grid absolute inset-0 opacity-50' />
+          <div className={cn('relative grid gap-4', hasPortrait && 'sm:grid-cols-[2fr_1fr]')}>
             <MediaGallery
               key={`${project.title}-landscape`}
               items={project.landscape}
               aspect='aspect-video'
             />
-          </div>
-
-          {hasPortrait && (
-            <div className='flex flex-col justify-center p-4'>
+            {hasPortrait && (
               <MediaGallery
                 key={`${project.title}-portrait`}
                 items={portrait}
                 aspect='aspect-[3/4]'
               />
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
-        <div className='p-6'>
+        <div className='flex min-w-0 flex-col p-7 sm:p-10'>
+          <p className='text-primary font-mono text-xs font-bold tracking-[0.2em] uppercase'>
+            Featured project / {String(index + 1).padStart(2, '0')}
+          </p>
           <div aria-live='polite'>
-            <h3 className='text-on-surface text-xl font-semibold tracking-tight'>
+            <h3 className='text-on-surface mt-5 text-3xl font-black tracking-tight sm:text-4xl'>
               {project.title}
             </h3>
           </div>
-
-          <p className='text-on-surface-variant mt-3 max-w-3xl leading-relaxed'>
+          <p className='text-on-surface-variant mt-5 leading-relaxed'>
             {project.desc}
           </p>
+          <TagList tags={project.techStacks} className='mt-7' />
 
-          <TagList
-            tags={project.techStacks}
-            className='mt-5'
-          />
+          {hasControls && (
+            <div className='border-outline-variant mt-auto flex items-center gap-3 border-t pt-7'>
+              {hasMultiple && (
+                <>
+                  <button type='button' onClick={goPrevious} aria-label='Previous project' className='border-outline-variant text-on-surface hover:bg-surface-container-high flex size-11 items-center justify-center rounded-lg border transition-colors'>
+                    <ChevronLeftIcon size={20} />
+                  </button>
+                  <span className='text-on-surface-variant font-mono text-xs'>
+                    {index + 1} / {PROJECTS.length}
+                  </span>
+                  <button type='button' onClick={goNext} aria-label='Next project' className='border-outline-variant text-on-surface hover:bg-surface-container-high flex size-11 items-center justify-center rounded-lg border transition-colors'>
+                    <ChevronRightIcon size={20} />
+                  </button>
+                </>
+              )}
+              {project.projectUrl && (
+                <a href={project.projectUrl} target='_blank' rel='noopener noreferrer' aria-label={`Open ${project.title} in a new tab`} className='bg-tertiary text-on-tertiary ml-auto inline-flex items-center gap-2 rounded-lg px-4 py-3 font-semibold'>
+                  Open project <ExternalLinkIcon size={18} />
+                </a>
+              )}
+            </div>
+          )}
         </div>
-
-        {hasControls && (
-          <div className='border-outline-variant flex items-stretch border-t'>
-            {hasMultiple && (
-              <button
-                type='button'
-                onClick={goPrevious}
-                aria-label='Previous project'
-                className='text-on-surface-variant hover:bg-surface-container-high border-outline-variant border-r px-5 transition-colors'
-              >
-                <ChevronLeftIcon size={20} />
-              </button>
-            )}
-
-            {hasMultiple && (
-              <span className='text-on-surface-variant grow px-4 py-4 text-center text-xs'>
-                {index + 1} / {PROJECTS.length}
-              </span>
-            )}
-
-            {project.projectUrl && (
-              <a
-                href={project.projectUrl}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label={`Open ${project.title} in a new tab`}
-                className='text-on-surface-variant hover:bg-surface-container-high border-outline-variant ml-auto flex items-center border-l px-5 transition-colors'
-              >
-                <ExternalLinkIcon size={20} />
-              </a>
-            )}
-
-            {hasMultiple && (
-              <button
-                type='button'
-                onClick={goNext}
-                aria-label='Next project'
-                className='text-on-surface-variant hover:bg-surface-container-high border-outline-variant border-l px-5 transition-colors'
-              >
-                <ChevronRightIcon size={20} />
-              </button>
-            )}
-          </div>
-        )}
       </div>
     </section>
   );
