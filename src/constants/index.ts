@@ -179,4 +179,8 @@ export const FOOTER_LINKS = [
     url: 'https://github.com/Zhecto',
     label: 'GitHub',
   },
+  {
+    url: 'https://www.linkedin.com/in/keanu-sonn-fortaleza-b8020b349',
+    label: 'LinkedIn',
+  },
 ];
