@@ -24,7 +24,7 @@ export const Experience = () => {
           {EXPERIENCES.map((job, index) => (
             <li
               key={`${job.company}-${job.joinDate}`}
-              className={`bg-surface-container-low border-outline-variant relative rounded-2xl border p-6 shadow-lg shadow-black/5 sm:p-8 lg:w-[calc(50%-2rem)] ${index % 2 ? 'lg:ml-auto' : ''}`}
+              className={`bg-surface-container-low border-outline-variant hover:border-tertiary/60 relative rounded-2xl border p-6 shadow-lg shadow-black/5 duration-300 motion-safe:transition-[scale,border-color] motion-safe:hover:scale-[1.015] sm:p-8 lg:w-[calc(50%-2rem)] ${index % 2 ? 'lg:ml-auto' : ''}`}
             >
               <span
                 aria-hidden='true'

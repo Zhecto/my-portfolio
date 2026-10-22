@@ -30,7 +30,7 @@ export const Technologies = () => {
             key={title}
             delay={index * 60}
           >
-            <article className={`bg-surface-container-low border-outline-variant relative h-full overflow-hidden rounded-2xl border p-7 shadow-lg shadow-black/5 transition-shadow duration-300 hover:shadow-xl ${index % 3 === 1 ? 'lg:translate-y-6' : index % 3 === 2 ? 'lg:translate-y-12' : ''}`}>
+            <article className={`bg-surface-container-low border-outline-variant hover:border-tertiary/60 relative h-full overflow-hidden rounded-2xl border p-7 shadow-lg shadow-black/5 duration-300 hover:shadow-xl motion-safe:transition-[scale,box-shadow,border-color] motion-safe:hover:scale-[1.02] ${index % 3 === 1 ? 'lg:translate-y-6' : index % 3 === 2 ? 'lg:translate-y-12' : ''}`}>
               <div aria-hidden='true' className='bg-tertiary absolute inset-x-0 top-0 h-1' />
               <div className='flex items-center gap-3'>
                 <div

@@ -100,13 +100,39 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
+@keyframes signal-float {
+  50% { translate: 0 -10px; }
+}
+
+@keyframes signal-orbit {
+  to { rotate: 360deg; }
+}
+
+@keyframes signal-breathe {
+  50% { scale: 1.18; }
+}
+
 @layer utilities {
   .rise-in { animation: rise-in 600ms cubic-bezier(0.22, 0.61, 0.36, 1) both; }
   [data-shown='true'] .signal-node { animation: signal-pulse 900ms ease-out 1; }
+  .signal-float { animation: signal-float 7s ease-in-out infinite; }
+  .signal-orbit { animation: signal-orbit 18s linear infinite; }
+  .signal-orbit::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--tertiary);
+    box-shadow: 0 0 12px var(--tertiary);
+  }
+  .signal-breathe { animation: signal-breathe 3s ease-in-out infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in, [data-shown='true'] .signal-node { animation: none; }
+  .rise-in, [data-shown='true'] .signal-node, .signal-float, .signal-orbit, .signal-breathe { animation: none; }
   .signal-spine-fill { transform: none; opacity: 0.35; }
 }

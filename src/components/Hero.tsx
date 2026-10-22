@@ -19,7 +19,7 @@ export const Hero = () => {
           <p className='text-on-surface-variant mt-3 text-base leading-relaxed sm:text-lg'>{PROFILE.intro}</p>
         </div>
         <div className='rise-in mt-10 flex flex-wrap gap-3' style={{ animationDelay: '260ms' }}>
-          <a href='#projects' className='bg-tertiary text-on-tertiary inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-bold shadow-[0_12px_32px_-14px_var(--tertiary)] transition-transform hover:-translate-y-1'>
+          <a href='#projects' className='bg-tertiary text-on-tertiary inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-bold shadow-[0_12px_32px_-14px_var(--tertiary)] motion-safe:transition-transform motion-safe:hover:-translate-y-1'>
             View projects <ArrowUpRightIcon size={18} />
           </a>
           <a href='#contact' className='border-outline text-on-surface hover:bg-surface-container inline-flex items-center gap-2 rounded-xl border px-6 py-3.5 font-semibold transition-colors'>
@@ -30,9 +30,9 @@ export const Hero = () => {
 
       <div aria-hidden='true' className='relative mx-auto aspect-square w-full max-w-[31rem]'>
         <div className='bg-tertiary/10 absolute inset-[5%] rounded-full blur-3xl' />
-        <div className='signal-grid border-outline-variant bg-surface-container-low absolute inset-0 rotate-[-8deg] overflow-hidden rounded-[3rem] border shadow-2xl'>
+        <div className='signal-grid signal-float border-outline-variant bg-surface-container-low absolute inset-0 rotate-[-8deg] overflow-hidden rounded-[3rem] border shadow-2xl'>
           <div className='border-outline-variant absolute inset-[10%] rounded-full border' />
-          <div className='border-outline-variant absolute inset-[22%] rounded-full border' />
+          <div className='signal-orbit border-outline-variant absolute inset-[22%] rounded-full border' />
           <div className='border-tertiary/70 absolute inset-[35%] rounded-full border-2' />
           <div className='bg-tertiary absolute top-[16%] left-[18%] size-3 rounded-full shadow-[0_0_22px_var(--tertiary)]' />
           <div className='bg-tertiary absolute right-[16%] bottom-[24%] size-2 rounded-full shadow-[0_0_22px_var(--tertiary)]' />
@@ -41,7 +41,7 @@ export const Hero = () => {
             <path d='M0 250 H125 M375 250 H500 M250 0 V95 M250 405 V500' stroke='var(--outline)' />
           </svg>
           <div className='bg-surface-container-high border-tertiary/60 absolute inset-[39%] rotate-45 rounded-2xl border-2 shadow-[0_0_45px_var(--tertiary)]' />
-          <div className='bg-tertiary absolute inset-[46%] rotate-45 rounded-md' />
+          <div className='signal-breathe bg-tertiary absolute inset-[46%] rotate-45 rounded-md' />
         </div>
         <div className='bg-surface text-on-surface border-outline-variant absolute -right-2 -bottom-5 rounded-xl border px-4 py-2 font-mono text-xs tracking-[0.2em] uppercase shadow-lg sm:right-1'>
           Web / Mobile / Apps

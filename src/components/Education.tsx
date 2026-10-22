@@ -47,7 +47,7 @@ export const Education = () => {
               key={title}
               delay={index * 60}
             >
-              <article className={`bg-surface-container-low border-outline-variant relative flex h-full flex-col overflow-hidden rounded-2xl border p-7 shadow-lg shadow-black/5 ${index === 1 ? 'lg:-translate-y-5' : ''}`}>
+              <article className={`bg-surface-container-low border-outline-variant hover:border-tertiary/60 relative flex h-full flex-col overflow-hidden rounded-2xl border p-7 shadow-lg shadow-black/5 duration-300 motion-safe:transition-[scale,border-color] motion-safe:hover:scale-[1.02] ${index === 1 ? 'lg:-translate-y-5' : ''}`}>
                 <div aria-hidden='true' className='bg-tertiary absolute top-0 left-0 h-1 w-24' />
                 <div className='bg-primary-container text-on-primary-container flex size-12 items-center justify-center rounded-2xl'>
                   <Icon size={24} />
