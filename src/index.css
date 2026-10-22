@@ -117,11 +117,11 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
 }
 
 @keyframes lightning-charge {
-  50% { scale: 1.05; box-shadow: 0 0 0 4px color-mix(in srgb, var(--tertiary) 25%, transparent), 0 0 46px var(--tertiary); }
+  50% { scale: 1.035; filter: brightness(1.12); }
 }
 
-@keyframes lightning-current {
-  50% { stroke-dashoffset: -24; opacity: 1; }
+@keyframes plasma-flicker {
+  50% { opacity: 0.45; }
 }
 
 @layer utilities {
@@ -146,20 +146,29 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
     box-shadow: 0 0 12px var(--tertiary);
   }
   .lightning-core {
-    background: radial-gradient(circle at 40% 35%, #fff9db, var(--tertiary) 34%, #8e6710 68%, var(--on-tertiary));
-    box-shadow: 0 0 0 1px var(--tertiary), 0 0 28px var(--tertiary);
+    background:
+      radial-gradient(circle at 32% 21%, #fff9db99, transparent 26%),
+      radial-gradient(circle at 50% 52%, #fff9db 0%, var(--tertiary) 9%, #8e6710 18%, #263049 42%, #060c19 100%);
+    box-shadow: inset 4px 5px 12px #fff9db66, inset -9px -12px 20px #02050acc, 0 0 0 1px var(--tertiary), 0 0 28px var(--tertiary);
     animation: lightning-charge 4s ease-in-out infinite;
   }
-  .lightning-filament {
-    stroke-dasharray: 32 8;
-    filter: drop-shadow(0 0 4px #fff9db);
-    animation: lightning-current 4s ease-in-out infinite;
+  .plasma-stream {
+    stroke: #fff8dd;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 3px #fff9db) drop-shadow(0 0 6px var(--tertiary));
+    animation: plasma-flicker 3.4s ease-in-out infinite;
   }
+  .plasma-branch { stroke: #ffd579; stroke-width: 1; stroke-linecap: round; opacity: 0.7; }
+  .plasma-electrode-halo { fill: var(--tertiary); opacity: 0.35; filter: blur(5px); }
+  .plasma-electrode { fill: #fff9db; filter: drop-shadow(0 0 7px #fff9db); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .lightning-core, .lightning-filament { animation: none; }
+  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .lightning-core, .plasma-stream { animation: none; }
   .signal-line { transform: none; }
   .circuit-trace { stroke-dasharray: none; stroke-dashoffset: 0; }
   .timeline-node { transition: none; }

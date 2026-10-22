@@ -45,11 +45,16 @@ export const Hero = () => {
           </svg>
           <div className='bg-tertiary/30 absolute inset-[32%] rounded-full blur-2xl' />
           <div className='lightning-core border-tertiary/70 absolute inset-[37%] overflow-hidden rounded-full border-2'>
-            <svg viewBox='0 0 120 120' className='absolute inset-0 size-full fill-none stroke-[#fff9e6] stroke-[3] [stroke-linecap:round] [stroke-linejoin:round]'>
-              <path className='lightning-filament' d='M60 58 43 44 51 35 34 22 28 9' />
-              <path className='lightning-filament' d='M64 54 80 43 74 31 94 22 101 10' style={{ animationDelay: '-1s' }} />
-              <path className='lightning-filament' d='M57 64 39 77 47 87 29 100' style={{ animationDelay: '-2s' }} />
-              <path className='lightning-filament' d='M66 65 84 77 76 91 94 103' style={{ animationDelay: '-3s' }} />
+            <svg viewBox='0 0 120 120' className='absolute inset-0 size-full fill-none'>
+              <circle cx='60' cy='60' r='13' className='plasma-electrode-halo' />
+              <path className='plasma-stream' d='M59 58 51 48 49 42 40 36 44 30 31 22 25 8' />
+              <path className='plasma-stream' d='M62 58 68 48 64 39 73 32 69 25 81 17 86 5' style={{ animationDelay: '-1.2s' }} />
+              <path className='plasma-stream' d='M64 61 75 65 79 74 90 73 94 84 108 90 118 88' style={{ animationDelay: '-2.1s' }} />
+              <path className='plasma-stream' d='M58 63 49 68 47 78 37 83 40 94 28 101 22 116' style={{ animationDelay: '-.8s' }} />
+              <path className='plasma-stream' d='M60 57 57 42 64 36 61 22 64 7' style={{ animationDelay: '-2.8s' }} />
+              <path className='plasma-stream' d='M64 60 78 54 87 58 99 49 114 52' style={{ animationDelay: '-1.7s' }} />
+              <path className='plasma-branch' d='M40 36 29 40 22 35 M73 32 87 31 94 23 M79 74 80 89 74 101 M47 78 53 92 49 104' />
+              <circle cx='60' cy='60' r='6' className='plasma-electrode' />
             </svg>
           </div>
         </div>
