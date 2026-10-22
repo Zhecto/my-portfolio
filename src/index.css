@@ -112,9 +112,22 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
   50% { scale: 1.18; }
 }
 
+@keyframes circuit-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes signal-line-draw {
+  to { transform: scaleX(1); }
+}
+
 @layer utilities {
   .rise-in { animation: rise-in 600ms cubic-bezier(0.22, 0.61, 0.36, 1) both; }
   [data-shown='true'] .signal-node { animation: signal-pulse 900ms ease-out 1; }
+  .signal-line { transform: scaleX(0); transform-origin: left; }
+  [data-shown='true'] .signal-line { animation: signal-line-draw 650ms ease-out 150ms both; }
+  .circuit-trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: circuit-draw 1100ms ease-out both; }
+  .timeline-node { background: var(--outline-variant); transition: background-color 600ms ease, box-shadow 600ms ease; }
+  .timeline-node[data-lit='true'] { background: var(--tertiary); box-shadow: 0 0 15px var(--tertiary); }
   .signal-float { animation: signal-float 7s ease-in-out infinite; }
   .signal-orbit { animation: signal-orbit 18s linear infinite; }
   .signal-orbit::after {
@@ -133,6 +146,9 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in, [data-shown='true'] .signal-node, .signal-float, .signal-orbit, .signal-breathe { animation: none; }
+  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .signal-breathe { animation: none; }
+  .signal-line { transform: none; }
+  .circuit-trace { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .timeline-node { transition: none; }
   .signal-spine-fill { transform: none; opacity: 0.35; }
 }

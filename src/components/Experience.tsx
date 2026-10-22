@@ -1,9 +1,37 @@
+import { useEffect, useRef } from 'react';
+
 import { EXPERIENCES } from '../constants';
 import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 import { TagList } from './TagList';
 
 export const Experience = () => {
+  const listRef = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    const nodes = listRef.current?.querySelectorAll('.timeline-node');
+    if (!nodes) return;
+
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach((node) => node.setAttribute('data-lit', 'true'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (!isIntersecting) return;
+          target.setAttribute('data-lit', 'true');
+          observer.unobserve(target);
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px' },
+    );
+
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+
   if (EXPERIENCES.length === 0) return null;
 
   return (
@@ -20,7 +48,7 @@ export const Experience = () => {
 
       {/* revealed as one block so the <ol> keeps its <li> children intact */}
       <Reveal>
-        <ol className='border-outline-variant relative mt-14 space-y-6 border-l pl-7 lg:border-0 lg:pl-0 lg:before:absolute lg:before:inset-y-0 lg:before:left-1/2 lg:before:w-px lg:before:bg-outline-variant'>
+        <ol ref={listRef} className='border-outline-variant relative mt-14 space-y-6 border-l pl-7 lg:border-0 lg:pl-0 lg:before:absolute lg:before:inset-y-0 lg:before:left-1/2 lg:before:w-px lg:before:bg-outline-variant'>
           {EXPERIENCES.map((job, index) => (
             <li
               key={`${job.company}-${job.joinDate}`}
@@ -28,7 +56,7 @@ export const Experience = () => {
             >
               <span
                 aria-hidden='true'
-                className={`bg-tertiary border-surface absolute top-8 -left-[2.2rem] size-4 rounded-full border-[3px] shadow-[0_0_15px_var(--tertiary)] ${index % 2 ? 'lg:-left-[2.65rem]' : 'lg:left-auto lg:-right-[2.65rem]'}`}
+                className={`timeline-node border-surface absolute top-8 -left-[2.2rem] size-4 rounded-full border-[3px] ${index % 2 ? 'lg:-left-[2.65rem]' : 'lg:left-auto lg:-right-[2.65rem]'}`}
               />
 
               <p className='text-primary font-mono text-xs font-semibold tracking-wider uppercase'>

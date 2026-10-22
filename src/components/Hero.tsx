@@ -37,7 +37,10 @@ export const Hero = () => {
           <div className='bg-tertiary absolute top-[16%] left-[18%] size-3 rounded-full shadow-[0_0_22px_var(--tertiary)]' />
           <div className='bg-tertiary absolute right-[16%] bottom-[24%] size-2 rounded-full shadow-[0_0_22px_var(--tertiary)]' />
           <svg viewBox='0 0 500 500' className='absolute inset-0 size-full fill-none stroke-[2]' preserveAspectRatio='none'>
-            <path d='M0 110 H118 L190 182 H295 L360 117 H500 M0 365 H105 L180 290 H310 L382 362 H500 M248 0 V112 L310 174 M250 500 V394 L185 328' stroke='var(--tertiary)' />
+            <path className='circuit-trace' pathLength='1' d='M0 110 H118 L190 182 H295 L360 117 H500' stroke='var(--tertiary)' style={{ animationDelay: '250ms' }} />
+            <path className='circuit-trace' pathLength='1' d='M0 365 H105 L180 290 H310 L382 362 H500' stroke='var(--tertiary)' style={{ animationDelay: '400ms' }} />
+            <path className='circuit-trace' pathLength='1' d='M248 0 V112 L310 174' stroke='var(--tertiary)' style={{ animationDelay: '550ms' }} />
+            <path className='circuit-trace' pathLength='1' d='M250 500 V394 L185 328' stroke='var(--tertiary)' style={{ animationDelay: '700ms' }} />
             <path d='M0 250 H125 M375 250 H500 M250 0 V95 M250 405 V500' stroke='var(--outline)' />
           </svg>
           <div className='bg-surface-container-high border-tertiary/60 absolute inset-[39%] rotate-45 rounded-2xl border-2 shadow-[0_0_45px_var(--tertiary)]' />
