@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local agent tools and generated data
+/.code-review-graph/
+/.codex/
+/.superpowers/
