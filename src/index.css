@@ -108,20 +108,16 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
   to { rotate: 360deg; }
 }
 
+@keyframes signal-breathe {
+  50% { scale: 1.18; }
+}
+
 @keyframes circuit-draw {
   to { stroke-dashoffset: 0; }
 }
 
 @keyframes signal-line-draw {
   to { transform: scaleX(1); }
-}
-
-@keyframes lightning-charge {
-  50% { scale: 1.035; filter: brightness(1.12); }
-}
-
-@keyframes plasma-flicker {
-  50% { opacity: 0.45; }
 }
 
 @layer utilities {
@@ -145,30 +141,12 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
     background: var(--tertiary);
     box-shadow: 0 0 12px var(--tertiary);
   }
-  .lightning-core {
-    background:
-      radial-gradient(circle at 32% 21%, #fff9db99, transparent 26%),
-      radial-gradient(circle at 50% 52%, #fff9db 0%, var(--tertiary) 9%, #8e6710 18%, #263049 42%, #060c19 100%);
-    box-shadow: inset 4px 5px 12px #fff9db66, inset -9px -12px 20px #02050acc, 0 0 0 1px var(--tertiary), 0 0 28px var(--tertiary);
-    animation: lightning-charge 4s ease-in-out infinite;
-  }
-  .plasma-stream {
-    stroke: #fff8dd;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 3px #fff9db) drop-shadow(0 0 6px var(--tertiary));
-    animation: plasma-flicker 3.4s ease-in-out infinite;
-  }
-  .plasma-branch { stroke: #ffd579; stroke-width: 1; stroke-linecap: round; opacity: 0.7; }
-  .plasma-electrode-halo { fill: var(--tertiary); opacity: 0.35; filter: blur(5px); }
-  .plasma-electrode { fill: #fff9db; filter: drop-shadow(0 0 7px #fff9db); }
+  .signal-breathe { animation: signal-breathe 3s ease-in-out infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .lightning-core, .plasma-stream { animation: none; }
+  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .signal-breathe { animation: none; }
   .signal-line { transform: none; }
   .circuit-trace { stroke-dasharray: none; stroke-dashoffset: 0; }
   .timeline-node { transition: none; }

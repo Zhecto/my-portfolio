@@ -43,20 +43,8 @@ export const Hero = () => {
             <path className='circuit-trace' pathLength='1' d='M250 500 V394 L185 328' stroke='var(--tertiary)' style={{ animationDelay: '700ms' }} />
             <path d='M0 250 H125 M375 250 H500 M250 0 V95 M250 405 V500' stroke='var(--outline)' />
           </svg>
-          <div className='bg-tertiary/30 absolute inset-[32%] rounded-full blur-2xl' />
-          <div className='lightning-core border-tertiary/70 absolute inset-[37%] overflow-hidden rounded-full border-2'>
-            <svg viewBox='0 0 120 120' className='absolute inset-0 size-full fill-none'>
-              <circle cx='60' cy='60' r='13' className='plasma-electrode-halo' />
-              <path className='plasma-stream' d='M59 58 51 48 49 42 40 36 44 30 31 22 25 8' />
-              <path className='plasma-stream' d='M62 58 68 48 64 39 73 32 69 25 81 17 86 5' style={{ animationDelay: '-1.2s' }} />
-              <path className='plasma-stream' d='M64 61 75 65 79 74 90 73 94 84 108 90 118 88' style={{ animationDelay: '-2.1s' }} />
-              <path className='plasma-stream' d='M58 63 49 68 47 78 37 83 40 94 28 101 22 116' style={{ animationDelay: '-.8s' }} />
-              <path className='plasma-stream' d='M60 57 57 42 64 36 61 22 64 7' style={{ animationDelay: '-2.8s' }} />
-              <path className='plasma-stream' d='M64 60 78 54 87 58 99 49 114 52' style={{ animationDelay: '-1.7s' }} />
-              <path className='plasma-branch' d='M40 36 29 40 22 35 M73 32 87 31 94 23 M79 74 80 89 74 101 M47 78 53 92 49 104' />
-              <circle cx='60' cy='60' r='6' className='plasma-electrode' />
-            </svg>
-          </div>
+          <div className='bg-surface-container-high border-tertiary/60 absolute inset-[39%] rotate-45 rounded-2xl border-2 shadow-[0_0_45px_var(--tertiary)]' />
+          <div className='signal-breathe bg-tertiary absolute inset-[46%] rotate-45 rounded-md' />
         </div>
         <div className='bg-surface text-on-surface border-outline-variant absolute -right-2 -bottom-5 rounded-xl border px-4 py-2 font-mono text-xs tracking-[0.2em] uppercase shadow-lg sm:right-1'>
           Web / Mobile / Apps
