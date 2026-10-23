@@ -43,8 +43,15 @@ export const Hero = () => {
             <path className='circuit-trace' pathLength='1' d='M250 500 V394 L185 328' stroke='var(--tertiary)' style={{ animationDelay: '700ms' }} />
             <path d='M0 250 H125 M375 250 H500 M250 0 V95 M250 405 V500' stroke='var(--outline)' />
           </svg>
-          <div className='bg-surface-container-high border-tertiary/60 absolute inset-[39%] rotate-45 rounded-2xl border-2 shadow-[0_0_45px_var(--tertiary)]' />
-          <div className='signal-breathe bg-tertiary absolute inset-[46%] rotate-45 rounded-md' />
+          <div className='bg-surface-container-high border-tertiary/60 absolute inset-[39%] rounded-full border-2 shadow-[0_0_45px_var(--tertiary)]'>
+            <svg viewBox='0 0 100 100' className='signal-rotor absolute inset-[2%] size-[96%]' fill='var(--tertiary)' aria-hidden='true'>
+              <path id='rotor-blade' d='M46 46 C42 36 43 23 50 9 Q52 5 57 8 L64 14 Q67 17 63 20 C55 28 54 39 55 46 Z' />
+              <use href='#rotor-blade' transform='rotate(90 50 50)' />
+              <use href='#rotor-blade' transform='rotate(180 50 50)' />
+              <use href='#rotor-blade' transform='rotate(270 50 50)' />
+              <circle cx='50' cy='50' r='10' fill='var(--surface-container-high)' stroke='var(--tertiary)' strokeWidth='3' />
+            </svg>
+          </div>
         </div>
         <div className='bg-surface text-on-surface border-outline-variant absolute -right-2 -bottom-5 rounded-xl border px-4 py-2 font-mono text-xs tracking-[0.2em] uppercase shadow-lg sm:right-1'>
           Web / Mobile / Apps

@@ -108,10 +108,6 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
   to { rotate: 360deg; }
 }
 
-@keyframes signal-breathe {
-  50% { scale: 1.18; }
-}
-
 @keyframes circuit-draw {
   to { stroke-dashoffset: 0; }
 }
@@ -141,12 +137,12 @@ body { font-family: ui-sans-serif, system-ui, sans-serif; }
     background: var(--tertiary);
     box-shadow: 0 0 12px var(--tertiary);
   }
-  .signal-breathe { animation: signal-breathe 3s ease-in-out infinite; }
+  .signal-rotor { animation: signal-orbit 14s linear infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .signal-breathe { animation: none; }
+  .rise-in, [data-shown='true'] .signal-node, [data-shown='true'] .signal-line, .circuit-trace, .signal-float, .signal-orbit, .signal-rotor { animation: none; }
   .signal-line { transform: none; }
   .circuit-trace { stroke-dasharray: none; stroke-dashoffset: 0; }
   .timeline-node { transition: none; }
