@@ -33,11 +33,13 @@ import { Footer } from './components/Footer';
 
 export const App = () => {
   return (
-    // isolate so the negative-z backdrop paints above bg-surface instead of behind it
-    <div className='bg-surface text-on-surface isolate min-h-screen'>
+    <div className='bg-surface text-on-surface isolate min-h-screen overflow-x-clip'>
       <Backdrop />
       <Navbar />
-      <main>
+      <main className='relative'>
+        <div aria-hidden='true' className='signal-spine bg-outline-variant pointer-events-none absolute inset-y-0 z-0 w-px'>
+          <div className='signal-spine-fill bg-tertiary h-full w-[3px] shadow-[0_0_15px_var(--tertiary)]' />
+        </div>
         <Hero />
         <Technologies />
         <Experience />
