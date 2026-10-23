@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className='relative z-10'>
         <p className='text-on-surface-variant rise-in mb-8 flex items-center gap-3 font-mono text-xs font-semibold tracking-[0.24em] uppercase'>
           <span className='bg-tertiary size-2.5 rounded-full shadow-[0_0_20px_var(--tertiary)]' />
-          Full-stack developer // portfolio
+          Building useful things
         </p>
         <h1 className='text-on-surface rise-in max-w-3xl text-[clamp(3.4rem,8vw,7.8rem)] leading-[0.93] font-black tracking-[-0.075em]' style={{ animationDelay: '100ms' }}>
           {PROFILE.name}
