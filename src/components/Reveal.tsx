@@ -37,6 +37,7 @@ export const Reveal = ({ children, delay = 0 }: RevealProps) => {
   return (
     <div
       ref={ref}
+      data-shown={shown}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={cn(
         'motion-reduce:translate-y-0 motion-reduce:opacity-100 transition-[opacity,transform] duration-500 ease-out',

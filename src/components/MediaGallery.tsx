@@ -18,7 +18,7 @@ export const MediaGallery = ({ items, aspect }: MediaGalleryProps) => {
     <div>
       <div
         className={cn(
-          'bg-surface-container overflow-hidden rounded-2xl',
+          'bg-surface-container group overflow-hidden rounded-2xl',
           aspect,
         )}
       >
@@ -26,7 +26,7 @@ export const MediaGallery = ({ items, aspect }: MediaGalleryProps) => {
           src={current.src}
           alt={current.alt}
           decoding='async'
-          className='size-full object-cover'
+          className='size-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105'
         />
       </div>
 

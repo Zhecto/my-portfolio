@@ -36,10 +36,10 @@ export const NAV_LINKS = [
 
 export const PROFILE = {
   name: 'Keanu Sonn Fortaleza',
-  title: 'Full-Stack Developer',
+  title: 'Ideas into useful software.',
   email: 'keanufortalezax44@gmail.com',
   intro:
-    'I build web and mobile apps with TypeScript, React Native and Supabase. Currently a software developer intern at Metawatt, working on features, bug fixes and manual testing.',
+    'I like solving messy problems, building clear experiences, and catching the bugs and rough edges that get in the way.',
 };
 
 export const PROJECTS: Project[] = [
@@ -178,5 +178,9 @@ export const FOOTER_LINKS = [
   {
     url: 'https://github.com/Zhecto',
     label: 'GitHub',
+  },
+  {
+    url: 'https://www.linkedin.com/in/keanu-sonn-fortaleza-b8020b349',
+    label: 'LinkedIn',
   },
 ];
